@@ -1,0 +1,22 @@
+pipeline{
+     agent{
+        docker {
+               image 'ubuntu:22.04'
+               args '--privileged'
+        }
+     }
+
+     stages{
+	stage ('checkout'){
+          steps{
+           cleanWs()
+           checkout scm
+          }
+        }
+       stage ('buid'){
+         steps{
+          sh './tar_file.sh'   
+	 }
+       }
+     }
+}
