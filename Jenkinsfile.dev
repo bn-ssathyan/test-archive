@@ -15,7 +15,10 @@ pipeline{
         }
        stage ('buid'){
          steps{
-          sh './tar_file.sh'   
+	   script{
+	  	echo 'this script archives the files in directory'
+          	sh './tar_file.sh'   
+	   }
 	 }
        }
      }
