@@ -16,7 +16,7 @@ pipeline{
        stage ('buid'){
          steps{
 	   script{
-	  	echo 'Archives the files in directory'
+	  	echo 'Archive the files in directory'
           	sh './tar_file.sh'   
 	   }
 	 }
